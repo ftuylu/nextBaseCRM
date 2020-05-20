@@ -5,7 +5,11 @@ public class testexam {
 
         System.out.println("hello");
 
+
+        //denemegit fetch
+
         //deneme
+
 
     }
 }
