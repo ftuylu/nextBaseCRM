@@ -7,6 +7,8 @@ public class AzizProject {
 
         // bu bir deneme
 
+        // yeni ekleme 23
+
 
     }
 }
