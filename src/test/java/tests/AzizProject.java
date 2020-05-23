@@ -5,11 +5,7 @@ public class AzizProject {
         System.out.println("hey");
 
 
-        // bu bir deneme
 
-        // yeni ekleme 23
-
-        // saat 11 54
 
     }
 }
