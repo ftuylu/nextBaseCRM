@@ -6,6 +6,5 @@ public class abdullah {
         System.out.println("hello");
 
 
-        System.out.println("dd");
     }
 }
