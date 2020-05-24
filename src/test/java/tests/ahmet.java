@@ -1,8 +1,8 @@
 package tests;
 
-public class Hacer {
+public class ahmet {
     public static void main(String[] args) {
-        System.out.println("hello friends");
+        System.out.println("iyi Bayramlar");
     }
     // first comment
 }
