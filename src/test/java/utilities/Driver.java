@@ -1,6 +1,5 @@
 package utilities;
 
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -73,4 +72,8 @@ public class Driver {
             driver = null;
         }
     }
+
 }
+
+}
+
