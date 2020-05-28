@@ -8,7 +8,6 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
-import utilities.BrowserUtils;
 import utilities.ConfigurationReader;
 import utilities.Driver;
 
