@@ -1,4 +1,5 @@
 package utilities;
+
 import java.io.FileInputStream;
 import java.util.Properties;
 
@@ -31,7 +32,4 @@ public class ConfigurationReader {
     public static String get(String keyName) {
         return properties.getProperty(keyName);
     }
-
-
-}
 
