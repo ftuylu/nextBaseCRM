@@ -1,5 +1,4 @@
 package pages;
-
 import utilities.BrowserUtils;
 import utilities.Driver;
 import org.openqa.selenium.By;
