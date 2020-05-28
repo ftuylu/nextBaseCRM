@@ -1,4 +1,4 @@
-package tests.pages;
+package pages;
 
 import com.cybertek.utilities.BrowserUtils;
 import com.cybertek.utilities.Driver;
