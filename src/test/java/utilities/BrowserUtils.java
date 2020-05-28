@@ -1,7 +1,4 @@
-package utilities;
-
-
-
+package com.cybertek.utilities;
 
 
 import org.apache.commons.io.FileUtils;
@@ -18,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
 
 public class BrowserUtils {
     /*
