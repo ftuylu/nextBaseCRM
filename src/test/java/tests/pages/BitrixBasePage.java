@@ -1,11 +1,9 @@
 package tests.pages;
 
 import com.cybertek.utilities.BrowserUtils;
-import com.cybertek.utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.BrowserUtils;
 import utilities.Driver;
 
 public class BitrixBasePage {
