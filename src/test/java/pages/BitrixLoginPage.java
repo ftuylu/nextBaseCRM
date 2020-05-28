@@ -5,8 +5,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilities.ConfigurationReader;
 import utilities.Driver;
-public class BitrixLoginPage {
 
+public class BitrixLoginPage {
 
     public BitrixLoginPage() {
         PageFactory.initElements(Driver.get(), this);
@@ -29,6 +29,7 @@ public class BitrixLoginPage {
         passwordInput.sendKeys(passwordStr);
         loginBtn.click();
     }
+
 
 
     public void loginHelpdesk() {
@@ -57,5 +58,5 @@ public class BitrixLoginPage {
     }
 }
 
-}
+
 
