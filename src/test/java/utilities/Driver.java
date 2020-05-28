@@ -1,4 +1,5 @@
 package utilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -11,7 +12,8 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-  private Driver() {}
+
+    private Driver() {}
 
     private static WebDriver driver;
 
@@ -57,6 +59,8 @@ public class Driver {
                     break;
             }
 
+
+
         }
 
         return driver;
@@ -68,6 +72,8 @@ public class Driver {
             driver = null;
         }
     }
+
 }
 
+}
 
