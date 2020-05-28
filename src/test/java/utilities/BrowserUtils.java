@@ -1,6 +1,4 @@
-package com.cybertek.utilities;
-
-
+package utilities;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -8,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import utilities.Driver;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;

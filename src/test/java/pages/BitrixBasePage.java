@@ -4,8 +4,6 @@ import utilities.Driver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import utilities.BrowserUtils;
-import utilities.Driver;
 
 public class BitrixBasePage {
 
