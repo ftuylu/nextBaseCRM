@@ -30,7 +30,7 @@ public class BitrixLoginPage {
         loginBtn.click();
     }
 
-}
+
 
     public void loginHelpdesk() {
         String username = ConfigurationReader.get("helpdesk_username");
@@ -58,5 +58,5 @@ public class BitrixLoginPage {
     }
 }
 
-}
+
 
