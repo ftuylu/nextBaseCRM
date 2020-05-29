@@ -1,4 +1,4 @@
-package tests.user_story4;
+package tests.user_story_4;
 
 import org.testng.annotations.Test;
 import pages.BitrixLoginPage;
