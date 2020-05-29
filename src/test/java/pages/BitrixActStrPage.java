@@ -13,7 +13,6 @@ public class BitrixActStrPage extends BitrixBasePage{
         PageFactory.initElements(Driver.get(),this);
     }
 
-
     public void navigateActiveStream(String module, String tab){
 
         String moduleLocator = "//a[@title='" + module + "']";
@@ -23,10 +22,4 @@ public class BitrixActStrPage extends BitrixBasePage{
         String tabLocator= "(//span[.='"+tab+"'])[1]";
         Driver.get().findElement(By.xpath(tabLocator)).click();
     }
-
-
-
-
-
-
 }
