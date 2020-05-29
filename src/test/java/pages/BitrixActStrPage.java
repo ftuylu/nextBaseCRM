@@ -13,10 +13,12 @@ public class BitrixActStrPage extends BitrixBasePage{
 
     @FindBy(id="feed-add-post-form-tab-vote")
     public WebElement poll;
-
-
-
-
+    @FindBy (id ="feed-add-post-form-tab-message")
+    public WebElement Message;
+    @FindBy (id ="feed-add-post-form-tab-calendar")
+    public WebElement Event;
+    @FindBy (id ="feed-add-post-form-tab-tasks")
+    public WebElement Task;
 
 
 }
