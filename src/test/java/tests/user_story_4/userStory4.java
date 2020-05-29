@@ -7,7 +7,9 @@ import pages.BitrixLoginPage;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
+import pages.BitrixPollPage;
 import tests.TestBase;
+import utilities.BrowserUtils;
 
 public class userStory4 extends TestBase {
 
@@ -18,6 +20,9 @@ public class userStory4 extends TestBase {
       loginPage.loginHelpdesk();
       BitrixActStrPage pollBtn =new BitrixActStrPage();
       pollBtn.poll.click();
+
+      BitrixPollPage pollPage =new BitrixPollPage();
+      BrowserUtils.clickWithJS(pollPage.addMention);
 
    }
 }
