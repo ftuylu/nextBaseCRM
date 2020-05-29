@@ -1,3 +1,4 @@
 .idea/
 target/
 nextBaseCRM.iml
+.test-output/
