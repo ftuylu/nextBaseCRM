@@ -47,13 +47,13 @@ public class TaskModuleUserStory_2 extends TestBase {
         extentLogger.info("clicking add mention icon");
         taskPage.addMentionIcon.click();
 
-
         extentLogger.info("clicking employee and departments icon");
         taskPage.employeeAndDepartments.click();
 
+        String expected = taskPage.userMail.getText();
+
         extentLogger.info("clicking one user name");
         taskPage.userMail.click();
-
 
         WebElement iframeElement = driver.findElement(By.xpath("(//iframe[@class='bx-editor-iframe'])[2]"));
 
@@ -61,16 +61,13 @@ public class TaskModuleUserStory_2 extends TestBase {
 
         WebElement body = driver.findElement(By.cssSelector("body"));
 
-        String actual = body.getText();
-        //String expected = taskPage.userMail.getText();
+        String actual = body.getText().trim();
 
-        System.out.println(taskPage.userMail);
-
+        extentLogger.info("verifyin is the same user mail");
+        Assert.assertEquals(actual,expected,"verifyin is the same user mail");
 
         extentLogger.pass("PASS: task module test");
 
-
     }
-
 
 }

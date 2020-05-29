@@ -35,7 +35,7 @@ public class TaskPageForUserStory2 {
     @FindBy(css = "[id^='destDepartmentTab_']") //id dinamik. contains demek id^
     public WebElement employeeAndDepartments;
 
-    @FindBy(xpath = "(//div[@id='bx-lm-category-relation-129']/a)[1]") //ilk siradaki mail(kullanici adi)
+    @FindBy(xpath = "//*[@id=\"bx-lm-category-relation-129\"]/a[1]/div[1]/div[1]") //ilk siradaki mail(kullanici adi)
     public WebElement userMail;
 
     @FindBy(xpath = "(//span[@class='bxhtmled-metion']") //metin kutusundaki yazi
