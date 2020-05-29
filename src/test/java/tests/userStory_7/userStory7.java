@@ -1,8 +1,9 @@
-package tests;
+package tests.userStory_7;
 
 import org.testng.annotations.Test;
 import pages.BitrixLoginPage;
 import pages.MorePage;
+import tests.TestBase;
 
 public class userStory7 extends TestBase {
 
