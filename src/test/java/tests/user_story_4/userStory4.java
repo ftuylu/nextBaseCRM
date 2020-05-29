@@ -1,6 +1,7 @@
 package tests.user_story_4;
 
 import org.testng.annotations.Test;
+import pages.BitrixActStrPage;
 import pages.BitrixLoginPage;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -15,6 +16,8 @@ public class userStory4 extends TestBase {
       extentLogger = report.createTest("Bitrix24 User Story4 AC1");
       BitrixLoginPage loginPage =new BitrixLoginPage();
       loginPage.loginHelpdesk();
+      BitrixActStrPage pollBtn =new BitrixActStrPage();
+      pollBtn.poll.click();
 
    }
 }
