@@ -37,6 +37,14 @@ public class MorePage extends BitrixBasePage {
 //    @FindBy(css = ".bx-finder-box-tab bx-lm-tab-department")
 //    public WebElement employeeaAndDepartment;
 
+    @FindBy(xpath = "//div[text() = 'marketing15@cybertekschool.com']")
+    public WebElement emailFromEmployee;
+
+    @FindBy(css = ".feed-add-post-del-but")
+    public WebElement deleteAllEmployee;
+
+
+
 
     public void navigateInMore(String module) {
         String tabLocator = "//span[@id='feed-add-post-form-link-text']";

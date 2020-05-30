@@ -3,6 +3,7 @@ package tests.userStory_7;
 import org.testng.annotations.Test;
 import pages.BitrixLoginPage;
 import pages.MorePage;
+import pages.TaskPageForUserStory2;
 import tests.TestBase;
 import utilities.BrowserUtils;
 
@@ -35,11 +36,23 @@ public class userStory7 extends TestBase {
         MorePage morePage = new MorePage();
         morePage.navigateInMore("Announcement");
 
+        //Delete AllEmployees option
+        morePage.deleteAllEmployee.click();
+
+        //Add more recepients
+        morePage.addRecipent.click();
+        TaskPageForUserStory2 employeeAndDepartment = new TaskPageForUserStory2();
+
+        employeeAndDepartment.employeeAndDepartments.click();
+        employeeAndDepartment.userMail.click();
+
+
+
         BrowserUtils.waitFor(3);
         morePage.uploadFiles.click();
         BrowserUtils.waitFor(3);
 
-        morePage.addRecipent.click();
+
 
         morePage.selectDocumentFromBitrix.click();
 
