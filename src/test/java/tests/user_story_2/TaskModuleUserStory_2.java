@@ -2,14 +2,17 @@ package tests.user_story_2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
 import pages.BitrixActStrPage;
+
 import pages.BitrixLoginPage;
-import pages.TaskPageForUserStory2;
+import pages.*;
 import tests.TestBase;
 import utilities.BrowserUtils;
 import utilities.Driver;
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
 public class TaskModuleUserStory_2 extends TestBase {
 
