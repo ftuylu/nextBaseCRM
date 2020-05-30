@@ -13,11 +13,29 @@ public class MorePage extends BitrixBasePage {
         PageFactory.initElements(Driver.get(),this);
     }
 
-    @FindBy(xpath = "*[@id='bx-b-uploadfile-blogPostForm']")
+    @FindBy(id = "bx-b-uploadfile-blogPostForm")
     public WebElement uploadFiles;
 
-    @FindBy(xpath = "//*[@class='wd-fa-add-file-light-title-text']")
+    @FindBy(xpath = "//input[@type='file']")
     public WebElement getUploadFilesAndImages;
+
+    @FindBy(xpath = "//*[@id='blog-submit-button-save']")
+    public WebElement sendButton;
+
+    @FindBy(css = "span[class ='wd-fa-add-file-light-title-text diskuf-selector-link']")
+    public WebElement selectDocumentFromBitrix;
+
+    @FindBy(linkText = "Whale (7).jpg")
+    public WebElement myDrive;
+
+    @FindBy(xpath = "//div[@class='popup-window-buttons']/span[1]")
+    public WebElement selectDocumentButton;
+
+    @FindBy(id="bx-destination-tag")
+    public WebElement addRecipent;
+
+//    @FindBy(css = ".bx-finder-box-tab bx-lm-tab-department")
+//    public WebElement employeeaAndDepartment;
 
 
     public void navigateInMore(String module) {
