@@ -65,19 +65,20 @@ public class TaskModuleUserStory_2 extends TestBase {
         String actual = body.getText().trim();
 
         extentLogger.info("verifyin is the same user mail");
-        Assert.assertEquals(actual,expected,"verifyin is the same user mail");
+        Assert.assertEquals(actual, expected, "verifyin is the same user mail");
 
         extentLogger.pass("PASS: task module test");
 
     }
+
     @Test
-    public void test6(){
+    public void test6() {
 
         BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
         bitrixLoginPage.loginMarketing();
 
         BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
-        bitrixActStrPage.navigateActiveStream("Activity Stream","Task");
+        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
 
         TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
         taskPageU2.linkIcon.click();
@@ -86,6 +87,7 @@ public class TaskModuleUserStory_2 extends TestBase {
         taskPageU2.attachLink("Save");
 
     }
+
     @Test
     public void test7() {
 
@@ -102,6 +104,39 @@ public class TaskModuleUserStory_2 extends TestBase {
         taskPageU2.addChecklist.click();
         taskPageU2.checklistSubmit("clase");
         taskPageU2.separatorChecklist.click();
+
+    }
+
+    @Test
+    public void test8() {
+
+        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
+        bitrixLoginPage.loginMarketing();
+
+        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
+        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
+
+        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
+
+        taskPageU2.responsibleAdd("last", "Asiya");
+        taskPageU2.assignmentCategory("Participants");
+        taskPageU2.AddParticipants.click();
+        taskPageU2.responsibleAdd("department", "marketing15@cybertekschool.com");
+    }
+
+    @Test
+    public void test9() {
+
+        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
+        bitrixLoginPage.loginMarketing();
+
+        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
+        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
+
+        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
+
+        taskPageU2.deadline.click();
+        taskPageU2.datePicker("5", "January", "2021", "04", "20");
 
     }
 }
