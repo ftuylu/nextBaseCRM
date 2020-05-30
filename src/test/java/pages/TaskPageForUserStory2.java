@@ -69,7 +69,6 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     public void checklistSubmit(String submitOrclose) {            //submit or close
         String locator = ".js-id-checklist-is-form-" + submitOrclose;
         Driver.get().findElement(By.cssSelector(locator)).click();
-
     }
 
     @FindBy(css = ".js-id-checklist-is-open-form")
@@ -78,14 +77,17 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(css = ".js-id-checklist-add-separator")
     public WebElement separatorChecklist;
 
-    public void selectContact(String contact, String name) {            //E-mail user, Employees and Departments and Recent contact lists
+    @FindBy(xpath = "(//a[contains(text(),'Add more')])[2]")
+    public WebElement responsibleAddMore;
+
+    public void responsibleAdd(String contact, String name) {            //E-mail user, Employees and Departments and Recent contact lists
+        responsibleAddMore.click();
         String contactLocator = ".bx-lm-tab-" + contact;           //name --> last , department or email
         Driver.get().findElement(By.cssSelector(contactLocator)).click();
 
         String nameLocator = "//div[.='" + name + "']/div";
         Driver.get().findElement(By.xpath(nameLocator)).click();
     }
-
     public void assignmentCategory(String category) {
         String categoryLocator = "//span[contains(text(),'" + category + "')])[1]"; // location --> "Created by" , "Participants", "Observers"
         Driver.get().findElement(By.cssSelector(categoryLocator)).click();
@@ -112,27 +114,31 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(xpath ="//span[.='Time planning']")
     public WebElement timePlanning;
 
-    @FindBy(css = "a[data-action='time_ampm_up']")
+    @FindBy(css = "a[data-action='time_ampm_up']") //AM or PM arrow up
     public WebElement amPmUp;
 
-    @FindBy(css = "a[data-action='time_ampm_down']")
+    @FindBy(css = "a[data-action='time_ampm_down']") //AM or PM arrow down
     public WebElement amPmdown;
 
-    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[2]")
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[2]") //Start date
     public WebElement startTaskOn;
 
-    @FindBy(xpath = "//input[@*='dateplanmanager-duration']")
+    @FindBy(xpath = "//input[@*='dateplanmanager-duration']")  //Duration
     public WebElement duration;
 
-    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[3]")
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[3]") //Finish date
     public WebElement finishTaskOn;
+
+    @FindBy(css = ".task-additional-alt-more")  //More to specify the task details
+    public WebElement More;
 
     public void datePicker(String day, String month, String year, String hour,String minute) {
 
         String dayLocator = "//a[.='" + day + "']";
         Driver.get().findElement(By.xpath(dayLocator)).click();
-        Driver.get().findElement(By.cssSelector("bx-calendar-year-title")).click();
-        String yearInput = "//bx-calendar-year-input";
+
+        Driver.get().findElement(By.cssSelector(".bx-calendar-top-year")).click();
+        String yearInput = ".bx-calendar-year-input";
         Driver.get().findElement(By.xpath(yearInput)).sendKeys(year);
 
         Driver.get().findElement(By.cssSelector(".bx-calendar-top-month")).click();
