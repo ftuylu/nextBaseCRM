@@ -15,10 +15,7 @@ public class userStory7 extends TestBase {
 
     @Test
 
-    public void uploadFiles() throws InterruptedException {
-
-        public void uploadFiles () {
-
+    public void uploadFiles() {
             BitrixLoginPage loginPage = new BitrixLoginPage();
             loginPage.loginMarketing();
 
@@ -42,7 +39,7 @@ public class userStory7 extends TestBase {
         }
 
         @Test
-        public void selectDocumentFromBitrix () {
+        public void selectDocumentFromBitrix(){
             BitrixLoginPage loginPage = new BitrixLoginPage();
             loginPage.loginMarketing();
 
@@ -75,4 +72,3 @@ public class userStory7 extends TestBase {
 
     }
 
-}
