@@ -31,7 +31,11 @@ public class userStory7 extends TestBase {
             morePage.uploadFiles.click();
             BrowserUtils.waitFor(3);
 
-            morePage.getUploadFilesAndImages.sendKeys("C:/Users/havva/Desktop/Whale.jpg");
+            String projectPath = System.getProperty("user.dir");
+            String relativePath = "src/test/resources/Whale.jpg";
+            String filePath = projectPath + "/"+relativePath;
+
+            morePage.getUploadFilesAndImages.sendKeys(filePath);
             // BrowserUtils.clickWithTimeOut(morePage.sendButton, 5);
             BrowserUtils.waitFor(3);
             morePage.sendButton.click();
