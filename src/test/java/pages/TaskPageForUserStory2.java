@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class TaskPageForUserStory2 extends BitrixBasePage {
 
     public TaskPageForUserStory2() {
@@ -77,7 +79,7 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     public WebElement separatorChecklist;
 
     public void selectContact(String contact, String name) {            //E-mail user, Employees and Departments and Recent contact lists
-        String contactLocator = ".bx-lm-tab-" + contact;           //last-department-email
+        String contactLocator = ".bx-lm-tab-" + contact;           //name --> last , department or email
         Driver.get().findElement(By.cssSelector(contactLocator)).click();
 
         String nameLocator = "//div[.='" + name + "']/div";
@@ -85,12 +87,74 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     }
 
     public void assignmentCategory(String category) {
-        String categoryLocator = "//span[contains(text(),'" + category + "')])[1]";
+        String categoryLocator = "//span[contains(text(),'" + category + "')])[1]"; // location --> "Created by" , "Participants", "Observers"
         Driver.get().findElement(By.cssSelector(categoryLocator)).click();
     }
 
-
     @FindBy(xpath = "(//a[contains(text(),'Change')])[3]")
-    public WebElement change;
+    public WebElement ChangeCreatedBy;
+
+    @FindBy(xpath = "(//a[@class='js-id-tdp-mem-sel-is-open-form task-form-field-when-empty task-form-field-link add'])[2]")
+    public WebElement AddParticipants;
+
+    @FindBy(xpath = "(//a[@class='js-id-tdp-mem-sel-is-open-form task-form-field-when-empty task-form-field-link add'])[2]")
+    public WebElement AddObserves;
+
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[1]") // Deadline picker
+    public WebElement deadline;
+
+    @FindBy(xpath = " //.bx-calendar-right-arrow") // Calender Right Arrow
+    public WebElement CalenderRightArrow;
+
+    @FindBy(xpath = " //.bx-calendar-right-arrow") // Calender Left Arrow
+    public WebElement CalenderLeftArrow;
+
+    @FindBy(xpath ="//span[.='Time planning']")
+    public WebElement timePlanning;
+
+    @FindBy(css = "a[data-action='time_ampm_up']")
+    public WebElement amPmUp;
+
+    @FindBy(css = "a[data-action='time_ampm_down']")
+    public WebElement amPmdown;
+
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[2]")
+    public WebElement startTaskOn;
+
+    @FindBy(xpath = "//input[@*='dateplanmanager-duration']")
+    public WebElement duration;
+
+    @FindBy(xpath = "(//input[@data-bx-id='datepicker-display'])[3]")
+    public WebElement finishTaskOn;
+
+    public void datePicker(String day, String month, String year, String hour,String minute) {
+
+        String dayLocator = "//a[.='" + day + "']";
+        Driver.get().findElement(By.xpath(dayLocator)).click();
+        Driver.get().findElement(By.cssSelector("bx-calendar-year-title")).click();
+        String yearInput = "//bx-calendar-year-input";
+        Driver.get().findElement(By.xpath(yearInput)).sendKeys(year);
+
+        Driver.get().findElement(By.cssSelector(".bx-calendar-top-month")).click();
+        String monthLocator = "//span[.='" + month + "']";
+        Driver.get().findElement(By.xpath(monthLocator)).click();
+
+        Driver.get().findElement(By.xpath("\"bx-calendar-form-input\"")).sendKeys(hour);
+        Driver.get().findElement(By.xpath("\"bx-calendar-form-input\"")).sendKeys(minute);
+        Driver.get().findElement(By.xpath("//span[.='Select']")).click();
+
+    }
+    public void setDuration(String unitOfTime,String amountOfTime) {
+        if (unitOfTime == "day") {
+            Driver.get().findElement(By.xpath("//span[.='days']")).click();
+            duration.sendKeys(amountOfTime);
+        } else if (unitOfTime == "hour") {
+            Driver.get().findElement(By.xpath("//span[.='hours']")).click();
+            duration.sendKeys(amountOfTime);
+        } else if (unitOfTime == "minute") {
+            Driver.get().findElement(By.xpath("//span[.='minutes']")).click();
+            duration.sendKeys(amountOfTime);
+        }
+    }
 
 }
