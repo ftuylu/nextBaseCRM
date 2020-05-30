@@ -2,12 +2,8 @@ package tests.user_story_2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import pages.BitrixActStrPage;
-
 import pages.BitrixLoginPage;
 import pages.*;
 import tests.TestBase;
@@ -67,84 +63,11 @@ public class TaskModuleUserStory_2 extends TestBase {
 
         String actual = body.getText().trim();
 
-
-        extentLogger.info("verifyin is the same user mail");
-        Assert.assertEquals(actual, expected, "verifyin is the same user mail");
-
         extentLogger.info("verifying is the same user mail");
         Assert.assertEquals(actual,expected,"verifying is the same user mail");
-
 
         extentLogger.pass("PASS: task module test");
 
     }
 
-    @Test
-    public void test6() {
-
-        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
-        bitrixLoginPage.loginMarketing();
-
-        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
-        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
-
-        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
-        taskPageU2.linkIcon.click();
-        taskPageU2.linkText.sendKeys("Bitrix24 CRM");
-        taskPageU2.linkUrlText.sendKeys("https://login.nextbasecrm.com/");
-        taskPageU2.attachLink("Save");
-
-    }
-
-    @Test
-    public void test7() {
-
-        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
-        bitrixLoginPage.loginMarketing();
-
-        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
-        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
-
-        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
-        taskPageU2.checklist.click();
-        taskPageU2.checklistText.sendKeys("Java Practice");
-        taskPageU2.checklistSubmit("submit");
-        taskPageU2.addChecklist.click();
-        taskPageU2.checklistSubmit("clase");
-        taskPageU2.separatorChecklist.click();
-
-    }
-
-    @Test
-    public void test8() {
-
-        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
-        bitrixLoginPage.loginMarketing();
-
-        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
-        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
-
-        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
-
-        taskPageU2.responsibleAdd("last", "Asiya");
-        taskPageU2.assignmentCategory("Participants");
-        taskPageU2.AddParticipants.click();
-        taskPageU2.responsibleAdd("department", "marketing15@cybertekschool.com");
-    }
-
-    @Test
-    public void test9() {
-
-        BitrixLoginPage bitrixLoginPage = new BitrixLoginPage();
-        bitrixLoginPage.loginMarketing();
-
-        BitrixActStrPage bitrixActStrPage = new BitrixActStrPage();
-        bitrixActStrPage.navigateActiveStream("Activity Stream", "Task");
-
-        TaskPageForUserStory2 taskPageU2 = new TaskPageForUserStory2();
-
-        taskPageU2.deadline.click();
-        taskPageU2.datePicker("5", "January", "2021", "04", "20");
-
-    }
 }
