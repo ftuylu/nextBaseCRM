@@ -15,7 +15,7 @@ public class TaskModuleUserStory_2 extends TestBase {
 
 
     @Test
-    public void LoginTest() {
+    public void TaskModuleAC_1_2_4_5() {
 
         extentLogger = report.createTest("Task module test");
 
@@ -64,8 +64,13 @@ public class TaskModuleUserStory_2 extends TestBase {
 
         String actual = body.getText().trim();
 
+
         extentLogger.info("verifyin is the same user mail");
         Assert.assertEquals(actual, expected, "verifyin is the same user mail");
+
+        extentLogger.info("verifying is the same user mail");
+        Assert.assertEquals(actual,expected,"verifying is the same user mail");
+
 
         extentLogger.pass("PASS: task module test");
 
