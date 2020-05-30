@@ -18,7 +18,7 @@ public class userStory4Liz extends TestBase {
 
         BitrixActStrPage activityStream = new BitrixActStrPage();
 
-        activityStream.poll.click();
+        //activityStream.poll.click();
 
 
 
