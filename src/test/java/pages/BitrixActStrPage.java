@@ -21,5 +21,11 @@ public class BitrixActStrPage extends BitrixBasePage{
 
         String tabLocator= "(//span[.='"+tab+"'])[1]";
         Driver.get().findElement(By.xpath(tabLocator)).click();
+
+
+
     }
+    @FindBy(id="feed-add-post-form-tab-vote")
+    public WebElement poll;
+
 }
