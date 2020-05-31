@@ -1,19 +1,15 @@
-package tests.test6_somethingLikeThis;
+package tests.user_story6;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ActivityStream;
-import pages.LoginPage;
+import pages.MorePage;
+import pages.BitrixLoginPage;
 import tests.TestBase;
-import utilities.BrowserUtils;
-import utilities.Driver;
 
 import java.util.List;
 
-public class EmojiTest extends TestBase {
+public class EmojiTest_11 extends TestBase {
 
     /**
      * AC
@@ -35,17 +31,17 @@ public class EmojiTest extends TestBase {
         extentLogger = report.createTest("Emoji Test");
 
         extentLogger.info("Login as a Help Desk");
-        LoginPage loginPage = new LoginPage();
-        loginPage.loginAsHelpdesk();
-        ActivityStream activityStream = new ActivityStream();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginHelpdesk();
+        MorePage MorePage = new MorePage();
 
         extentLogger.info("navigating to Appreciation and clicking to emoji button");
-        activityStream.navigateTo("More", "Appreciation");
-        activityStream.emojiButton.click();
+        MorePage.navigateInMore( "Appreciation");
+        MorePage.emojiButton.click();
 
 
         extentLogger.info("selecting an emoji");
-        List<WebElement> emojiList = activityStream.emojiList;
+        List<WebElement> emojiList = MorePage.emojiList;
         extentLogger.info("verifying that all emojis are displayed");
         for (WebElement emoji : emojiList) {
             Assert.assertTrue(emoji.isDisplayed(), "verify that all emojis are displayed");

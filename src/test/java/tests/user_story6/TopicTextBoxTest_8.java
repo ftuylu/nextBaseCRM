@@ -1,12 +1,12 @@
-package tests.test6_somethingLikeThis;
+package tests.user_story6;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ActivityStream;
-import pages.LoginPage;
+import pages.MorePage;
+import pages.BitrixLoginPage;
 import tests.TestBase;
 
-public class TopicTextBoxTest extends TestBase {
+public class TopicTextBoxTest_8 extends TestBase {
 
     /**
      * AC
@@ -27,17 +27,17 @@ public class TopicTextBoxTest extends TestBase {
         extentLogger = report.createTest("Topic Test");
 
         extentLogger.info("Login as a Help Desk");
-        LoginPage loginPage = new LoginPage();
-        loginPage.loginAsHelpdesk();
-        ActivityStream activityStream = new ActivityStream();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginHelpdesk();
+        MorePage MorePage = new MorePage();
 
         extentLogger.info("navigating to topic button");
-        activityStream.navigateTo("More", "Appreciation");
-        activityStream.topicTextButton.click();
+        MorePage.navigateInMore( "Appreciation");
+        MorePage.topicTextButton.click();
 
 
         extentLogger.info("verifying topic text box is displayed");
-        Assert.assertTrue(activityStream.topicTextBox.isDisplayed(), "verify that topic text box visible");
+        Assert.assertTrue(MorePage.topicTextBox.isDisplayed(), "verify that topic text box visible");
 
         extentLogger.pass("PASS: Topic text box Test");
     }

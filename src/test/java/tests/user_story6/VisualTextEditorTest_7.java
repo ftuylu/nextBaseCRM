@@ -1,18 +1,12 @@
-package tests.test6_somethingLikeThis;
+package tests.user_story6;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pages.ActivityStream;
-import pages.LoginPage;
+import pages.MorePage;
+import pages.BitrixLoginPage;
 import tests.TestBase;
-import utilities.Driver;
 
-public class VisualTextEditorTest extends TestBase {
+public class VisualTextEditorTest_7 extends TestBase {
 
     /**
      * AC
@@ -28,22 +22,22 @@ public class VisualTextEditorTest extends TestBase {
      */
 
     @Test
-    public void visualEditorTest() throws InterruptedException {
+    public void visualEditorTest() {
 
         extentLogger = report.createTest("Visual Editor Test");
 
         extentLogger.info("Login as a Help Desk");
-        LoginPage loginPage = new LoginPage();
-        loginPage.loginAsHelpdesk();
-        ActivityStream activityStream = new ActivityStream();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginHelpdesk();
+        MorePage MorePage = new MorePage();
 
         extentLogger.info("navigating to visual editor");
-        activityStream.navigateTo("More", "Appreciation");
-        activityStream.visualEditorButton.click();
+        MorePage.navigateInMore( "Appreciation");
+        MorePage.visualEditorButton.click();
 
 
         extentLogger.info("verifying editor text bar is displayed");
-        Assert.assertTrue(activityStream.editorTextBar.isDisplayed(), "verify that editor text bar visible");
+        Assert.assertTrue(MorePage.editorTextBar.isDisplayed(), "verify that editor text bar visible");
 
         extentLogger.pass("PASS: Visual Editor Test");
     }

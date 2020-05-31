@@ -1,18 +1,14 @@
-package tests.test6_somethingLikeThis;
+package tests.user_story6;
 
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ActivityStream;
-import pages.LoginPage;
+import pages.MorePage;
+import pages.BitrixLoginPage;
 import tests.TestBase;
 import utilities.Driver;
 
-import static utilities.Driver.*;
-
-public class RecordVideoTest extends TestBase {
+public class RecordVideoTest_9 extends TestBase {
 
     /**
      * AC
@@ -33,25 +29,25 @@ public class RecordVideoTest extends TestBase {
         extentLogger = report.createTest("Video recording and sending test");
 
         extentLogger.info("Login as a Help Desk");
-        LoginPage loginPage = new LoginPage();
-        loginPage.loginAsHelpdesk();
-        ActivityStream activityStream = new ActivityStream();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginHelpdesk();
+        MorePage MorePage = new MorePage();
 
 
         extentLogger.info("navigating appreciation page and clicking video record button");
-        activityStream.navigateTo("More", "Appreciation");
-        activityStream.videoRecordButton.click();
+        MorePage.navigateInMore("Appreciation");
+        MorePage.videoRecordButton.click();
 
 
         extentLogger.info("verifying topic video recording pop up is showed up");
 
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.get();
-        javascriptExecutor.executeScript("arguments[0].click()", activityStream.videoSettingAllowButton);
+        javascriptExecutor.executeScript("arguments[0].click()", MorePage.videoSettingAllowButton);
 
 
 
         extentLogger.info("verifiying popup is showed up");
-        Assert.assertTrue(activityStream.videoSettingAllowButton.getText().equals("ALLOW"),"verify Device Access Button is 'ALLOW'");
+        Assert.assertTrue(MorePage.videoSettingAllowButton.getText().equals("ALLOW"),"verify Device Access Button is 'ALLOW'");
         extentLogger.pass("PASS: Topic text box Test");
     }
 }

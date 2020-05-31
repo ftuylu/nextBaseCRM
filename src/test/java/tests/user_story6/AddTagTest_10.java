@@ -1,23 +1,16 @@
-package tests.test6_somethingLikeThis;
+package tests.user_story6;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.interactions.Pause;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import pages.ActivityStream;
-import pages.LoginPage;
+import pages.MorePage;
+import pages.BitrixLoginPage;
+import pages.MorePage;
 import tests.TestBase;
-import utilities.BrowserUtils;
 import utilities.Driver;
 
-import java.awt.event.MouseEvent;
-import java.util.List;
-
-public class AddTagTest extends TestBase {
+public class AddTagTest_10 extends TestBase {
 
     /**
      * AC
@@ -42,32 +35,34 @@ public class AddTagTest extends TestBase {
 
         extentLogger = report.createTest("Add Tag Test");
         extentLogger.info("Login as a Help Desk");
-        LoginPage loginPage = new LoginPage();
-        loginPage.loginAsHelpdesk();
-        ActivityStream activityStream = new ActivityStream();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginHelpdesk();
+        MorePage MorePage = new MorePage();
 
 
         extentLogger.info("navigating to Add Tag button and clicking");
-        activityStream.navigateTo("More", "Appreciation");
-        activityStream.addTagButton.click();
+        MorePage.navigateInMore("Appreciation");
+        MorePage.addTagButton.click();
 
 
         extentLogger.info("adding new tag in the box is displayed");
-        activityStream.addTagBox.sendKeys("CyberteckSchool" + Keys.ENTER);
+        MorePage.addTagBox.sendKeys("CyberteckSchool" + Keys.ENTER);
 
-        activityStream.addTagButton.click();
-        activityStream.addTagBox.sendKeys("a");
+        MorePage.addTagButton.click();
+        MorePage.addTagBox.sendKeys("a");
         JavascriptExecutor javascriptExecutor = (JavascriptExecutor) Driver.get();
-        javascriptExecutor.executeScript("arguments[0].click()", activityStream.addTagFirstExisting);
-        javascriptExecutor.executeScript("arguments[0].click()", activityStream.addButton);
+        javascriptExecutor.executeScript("arguments[0].click()", MorePage.addTagFirstExisting);
+        javascriptExecutor.executeScript("arguments[0].click()", MorePage.addButton);
 
         extentLogger.info("verifying new tag is printed");
-        Assert.assertTrue(activityStream.addSelectedTagContainer.getText().contains("CyberteckSchool"), "verify that cybertekschool added");
+        Assert.assertTrue(MorePage.addSelectedTagContainer.getText().contains("CyberteckSchool"), "verify that cybertekschool added");
 
         extentLogger.info("verifying existing tag is selected");
-        Assert.assertTrue(activityStream.addSelectedTagContainer.getText().contains("Advice"), "verify that existing Advice tag is selected");
+        Assert.assertTrue(MorePage.addSelectedTagContainer.getText().contains("Advice"), "verify that existing Advice tag is selected");
 
         extentLogger.pass("PASS : Add tag Test");
+
+
 
     }
 }
