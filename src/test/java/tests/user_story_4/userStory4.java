@@ -20,26 +20,24 @@ import utilities.Driver;
 public class userStory4 extends TestBase {
 
    @Test
-   public void pollTabAddMention(){
+   public void pollTabAddMention() {
       extentLogger = report.createTest("Bitrix24 User Story4 AC6");
-
-      BitrixPollPage pollPage=new BitrixPollPage();
-      pollPage.loginPollPage();
-      extentLogger.info("Login successfully");
+      BitrixPollPage pollPage = new BitrixPollPage();
       pollPage.addMention.click();
       extentLogger.info("click addMention button");
-      String choosen=pollPage.selectContact.getText();
+      String choosen = pollPage.selectContact.getText();
       pollPage.selectContact.click();
       extentLogger.info("select a contact");
-      Assert.assertEquals(pollPage.text2.getText(),choosen,"verify add mention");
+      Assert.assertEquals(pollPage.text2.getText(), choosen, "verify add mention");
       extentLogger.pass("Pass");
 
    }
    @Test
-   public void getPollVisualEditor(){
-
-
+   public void getVisualEditor() {
+      BitrixPollPage pollPage = new BitrixPollPage();
+      pollPage.loginPollPage();
+      pollPage.visualEditor.click();
+      Assert.assertTrue(pollPage.visualBar.isDisplayed());
 
    }
 }
-     
