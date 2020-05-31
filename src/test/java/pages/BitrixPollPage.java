@@ -15,6 +15,14 @@ public class BitrixPollPage extends BitrixBasePage{
     public  WebElement selectContact;
     @FindBy(xpath = "//*[@id='bx-b-video-blogPostForm']/span")
     public  WebElement videoInsert;
+    @FindBy (xpath = "//span[@id='bxid615991897']")
+    public WebElement compContact;
+    @FindBy (xpath = "(//iframe)[1]")
+    public WebElement text;
+    @FindBy (xpath = "(//span[@class='feed-add-post-destination-text'])[2]")
+    public  WebElement text2;
+
+
 
     }
 

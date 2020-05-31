@@ -1,8 +1,10 @@
 package tests.user_story_4;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BitrixActStrPage;
 import pages.BitrixLoginPage;
@@ -22,14 +24,20 @@ public class userStory4 extends TestBase {
       extentLogger = report.createTest("Bitrix24 User Story4 AC6");
       BitrixLoginPage loginPage =new BitrixLoginPage();
       loginPage.loginHelpdesk();
-
+      extentLogger.info("Login successfully");
       BitrixActStrPage pollBtn =new BitrixActStrPage();
       pollBtn.poll.click();
-
+      extentLogger.info("click Poll button");
       BitrixPollPage pollPage =new BitrixPollPage();
-     BrowserUtils.waitFor(2);
-
+      BrowserUtils.waitFor(2);
       pollPage.addMention.click();
+      extentLogger.info("click addMention button");
+      String choosen=pollPage.selectContact.getText();
+      pollPage.selectContact.click();
+      extentLogger.info("select a contact");
+      Assert.assertEquals(pollPage.text2.getText(),choosen,"verify add mention");
+      extentLogger.pass("Pass");
+
    }
 }
      
