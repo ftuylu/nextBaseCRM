@@ -28,10 +28,16 @@ public class BitrixPollPage extends BitrixBasePage{
     public  WebElement selectContact;
     @FindBy (xpath = "(//span[@class='feed-add-post-destination-text'])[2]")
     public  WebElement text2;
-    @FindBy(id ="//span[@id='lhe_button_editor_blogPostForm']" )
+    @FindBy(id ="lhe_button_editor_blogPostForm" )
     public WebElement visualEditor;
-    @FindBy(id = "//div[@id='bx-html-editor-tlbr-idPostFormLHE_blogPostForm']")
+    @FindBy(id = "bx-html-editor-tlbr-idPostFormLHE_blogPostForm")
     public WebElement visualBar;
+    //@FindBy(id="lhe_button_title_blogPostForm")
+    @FindBy(xpath ="//span[@title='Topic']" )
+    public WebElement topicBtn;
+    @FindBy(xpath = "//input[@id='POST_TITLE']")
+    public WebElement topicMessBox;
+
 
     }
 

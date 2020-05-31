@@ -40,4 +40,12 @@ public class userStory4 extends TestBase {
       Assert.assertTrue(pollPage.visualBar.isDisplayed());
 
    }
+   @Test
+   public void getTopicIcon(){
+      BitrixPollPage pollPage=new BitrixPollPage();
+      pollPage.loginPollPage();
+      pollPage.topicBtn.click();
+      Assert.assertTrue(pollPage.topicMessBox.isDisplayed());
+      pollPage.logOut();
+   }
 }
