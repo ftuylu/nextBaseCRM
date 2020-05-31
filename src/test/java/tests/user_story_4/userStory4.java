@@ -22,14 +22,10 @@ public class userStory4 extends TestBase {
    @Test
    public void pollTabAddMention(){
       extentLogger = report.createTest("Bitrix24 User Story4 AC6");
-      BitrixLoginPage loginPage =new BitrixLoginPage();
-      loginPage.loginHelpdesk();
+
+      BitrixPollPage pollPage=new BitrixPollPage();
+      pollPage.loginPollPage();
       extentLogger.info("Login successfully");
-      BitrixActStrPage pollBtn =new BitrixActStrPage();
-      pollBtn.poll.click();
-      extentLogger.info("click Poll button");
-      BitrixPollPage pollPage =new BitrixPollPage();
-      BrowserUtils.waitFor(2);
       pollPage.addMention.click();
       extentLogger.info("click addMention button");
       String choosen=pollPage.selectContact.getText();
@@ -37,6 +33,12 @@ public class userStory4 extends TestBase {
       extentLogger.info("select a contact");
       Assert.assertEquals(pollPage.text2.getText(),choosen,"verify add mention");
       extentLogger.pass("Pass");
+
+   }
+   @Test
+   public void getPollVisualEditor(){
+
+
 
    }
 }
