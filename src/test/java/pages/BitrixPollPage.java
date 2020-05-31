@@ -37,6 +37,11 @@ public class BitrixPollPage extends BitrixBasePage{
     public WebElement topicBtn;
     @FindBy(xpath = "//input[@id='POST_TITLE']")
     public WebElement topicMessBox;
+    @FindBy(xpath = "(//span[contains(text(),'Record Video')])[1]")
+    public WebElement videoRecorderBtn;
+    @FindBy(css = "span.popup-window-button.popup-window-button-blue")
+    public WebElement popupAllowBtn;
+
 
 
     }

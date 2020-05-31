@@ -48,4 +48,16 @@ public class userStory4 extends TestBase {
       Assert.assertTrue(pollPage.topicMessBox.isDisplayed());
       pollPage.logOut();
    }
+   @Test
+   public void getRecordVideoTab(){
+      BitrixPollPage pollPage=new BitrixPollPage();
+      pollPage.loginPollPage();
+      pollPage.videoRecorderBtn.click();
+      BrowserUtils.waitForClickablility(pollPage.popupAllowBtn,3);
+      pollPage.popupAllowBtn.click();
+
+
+
+   }
+
 }
