@@ -25,18 +25,15 @@ public class BitrixPollPage extends BitrixBasePage{
         BitrixPollPage pollPage =new BitrixPollPage();
         BrowserUtils.waitFor(2);
     }
+
+
     @FindBy(xpath = "//*[@id='bx-b-mention-blogPostForm']")
     public WebElement addMention;
     @FindBy(xpath = "//div[@class='bx-finder-box-item-t7-name']")
     public  WebElement selectContact;
-    @FindBy(xpath = "//*[@id='bx-b-video-blogPostForm']/span")
-    public  WebElement videoInsert;
-    @FindBy (xpath = "//span[@id='bxid615991897']")
-    public WebElement compContact;
-    @FindBy (xpath = "(//iframe)[1]")
-    public WebElement text;
     @FindBy (xpath = "(//span[@class='feed-add-post-destination-text'])[2]")
     public  WebElement text2;
+
 
     @FindBy(xpath = "(//span[@title='Upload files'])[1]")
     public WebElement uploadFileButton;
@@ -72,7 +69,25 @@ public class BitrixPollPage extends BitrixBasePage{
     public WebElement addQuoteTextBox;
 
 
+    @FindBy(id ="lhe_button_editor_blogPostForm" )
+    public WebElement visualEditor;
+    @FindBy(id = "bx-html-editor-tlbr-idPostFormLHE_blogPostForm")
+    public WebElement visualBar;
+    //@FindBy(id="lhe_button_title_blogPostForm")
+    @FindBy(xpath ="//span[@title='Topic']" )
+    public WebElement topicBtn;
+    @FindBy(xpath = "//input[@id='POST_TITLE']")
+    public WebElement topicMessBox;
+    @FindBy(xpath = "(//span[contains(text(),'Record Video')])[1]")
+    public WebElement videoRecorderBtn;
+    @FindBy(css = "span.popup-window-button.popup-window-button-blue")
+    public WebElement popupAllowBtn;
+    @FindBy(xpath ="(//div[@class='popup-window-titlebar'])[1]" )
+    public WebElement popupError;
+
+
 
 
 }
+
 

@@ -110,6 +110,9 @@ public class MorePage extends BitrixBasePage {
             BrowserUtils.clickWithTimeOut(Driver.get().findElement(By.xpath(moduleLocator)),  5);
         }
     }
-
-
 }
+
+
+
+
+
