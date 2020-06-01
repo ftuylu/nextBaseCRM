@@ -84,6 +84,10 @@ public class BitrixPollPage extends BitrixBasePage{
     public WebElement popupAllowBtn;
     @FindBy(xpath ="(//div[@class='popup-window-titlebar'])[1]" )
     public WebElement popupError;
+    @FindBy(xpath = "//a[@class='vote-new-question-link addq']")
+    public WebElement addQuestionBtn;
+    @FindBy(xpath = "(//input[@type='checkbox'])[2]")
+    public WebElement multiplechoiceBtn;
 
 
 

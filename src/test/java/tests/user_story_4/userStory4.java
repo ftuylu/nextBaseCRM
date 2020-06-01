@@ -57,5 +57,18 @@ public class userStory4 extends TestBase {
       pollPage.popupAllowBtn.click();
 
    }
+   @Test
+   public  void  getAddQuestion(){
+      BitrixPollPage pollPage=new BitrixPollPage();
+      pollPage.loginPollPage();
+      pollPage.addQuestionBtn.click();
+      BrowserUtils.waitFor(3);
+      pollPage.multiplechoiceBtn.click();
+      Assert.assertTrue(pollPage.multiplechoiceBtn.isSelected());
+
+
+   }
+
+
 
 }
