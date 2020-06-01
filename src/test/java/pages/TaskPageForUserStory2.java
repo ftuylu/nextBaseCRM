@@ -52,12 +52,20 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(css = "#linklifefeed_task_form-text") // link text
     public WebElement linkText;
 
-    @FindBy(css = "#linklifefeed_task_form-text")// url text
+    @FindBy(css = "#linklifefeed_task_form-href")// url text
     public WebElement linkUrlText;
 
-    public void attachLink(String saveOrCancel) {            //save or cancel
-        String locator = "input[value='" + saveOrCancel + "']";
-        Driver.get().findElement(By.cssSelector(locator)).click();
+    @FindBy(css = "input[value='save'")// link save
+    public WebElement linkSave;
+
+    @FindBy(css = "input[value='cancel'")// link cancel
+    public WebElement linkcancel;
+
+    public void attachLink(String text, String urlText) {
+       linkIcon.click();
+       linkUrlText.sendKeys(text);
+       linkUrlText.sendKeys(urlText);
+       linkSave.click();
     }
 
     @FindBy(xpath = "//span[.='Checklist']")
