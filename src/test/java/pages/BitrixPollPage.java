@@ -22,6 +22,8 @@ public class BitrixPollPage extends BitrixBasePage{
         BitrixPollPage pollPage =new BitrixPollPage();
         BrowserUtils.waitFor(2);
     }
+
+
     @FindBy(xpath = "//*[@id='bx-b-mention-blogPostForm']")
     public WebElement addMention;
     @FindBy(xpath = "//div[@class='bx-finder-box-item-t7-name']")
@@ -41,6 +43,8 @@ public class BitrixPollPage extends BitrixBasePage{
     public WebElement videoRecorderBtn;
     @FindBy(css = "span.popup-window-button.popup-window-button-blue")
     public WebElement popupAllowBtn;
+    @FindBy(xpath ="(//div[@class='popup-window-titlebar'])[1]" )
+    public WebElement popupError;
 
 
 
