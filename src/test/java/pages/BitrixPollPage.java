@@ -16,5 +16,4 @@ public class BitrixPollPage extends BitrixBasePage{
     @FindBy(xpath = "//*[@id='bx-b-video-blogPostForm']/span")
     public  WebElement videoInsert;
 
-    }
-
+}
