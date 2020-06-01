@@ -56,9 +56,6 @@ public class userStory4 extends TestBase {
       BrowserUtils.waitForClickablility(pollPage.popupAllowBtn,3);
       pollPage.popupAllowBtn.click();
 
-
-
-
    }
 
 }
