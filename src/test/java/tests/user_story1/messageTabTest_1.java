@@ -7,8 +7,16 @@ import tests.TestBase;
 import utilities.BrowserUtils;
 import utilities.Driver;
 
+//  abdullah      2. User should be able to add users from selecting contact from E-mail user, Employees and Departments and Recent contact lists.
+//  abdullah    3. User should be able to attach link by clicking on the link icon.
+//  abd.       4. User should be able to insert videos by clicking on the video icon and entering the video URL.
+//  ahm      6. User should be able to add mention by clicking on the Add mention icon and select contacts from the lists provided in dropdown.
+//  ahm       9. User should be able to click on ""Record Video"" tab to record a video and attach it with the message."
+
 public class messageTabTest_1 extends TestBase {
 
+    //       "1. User should be able to click on upload files icon to upload files and pictures
+    //  ahmet      from local disks, download from external drive, select documents from bixtrix24, and create files to upload.
     @Test
     public void messageTest() {
 
@@ -37,7 +45,6 @@ public class messageTabTest_1 extends TestBase {
         BrowserUtils.waitFor(3);
         extentLogger.info("clicking UploadFilesImages button");
 
-
         String projectPath = System.getProperty("user.dir");
         String relativePath = "src/test/resources/Whale.jpg";
         String filePath = projectPath + "/" + relativePath;
@@ -53,7 +60,7 @@ public class messageTabTest_1 extends TestBase {
 
 
     }
-
+//        7. User should be able to click on Visual Editor and see the editor text-bar displays on top of the message box.
 
     @Test
     public void visualEditorTest() {
@@ -78,7 +85,11 @@ public class messageTabTest_1 extends TestBase {
 
         extentLogger.pass("PASS: Visual Editor Test");
     }
+
     @Test
+
+    //   5. User should be able to create a quote by clicking on the Comma icon.
+
     public void quoteTest(){
         extentLogger = report.createTest("Quote Test");
 
@@ -104,6 +115,9 @@ public class messageTabTest_1 extends TestBase {
 }
 
     @Test
+
+    //        8. User should be able to click on the Topic icon to see the Message Topic text box displays on top of the message box.
+
     public void topicTextTest() {
 
         extentLogger = report.createTest("Topic Test");
