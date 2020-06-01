@@ -55,8 +55,7 @@ public class userStory4 extends TestBase {
       pollPage.videoRecorderBtn.click();
       BrowserUtils.waitForClickablility(pollPage.popupAllowBtn,3);
       pollPage.popupAllowBtn.click();
-      BrowserUtils.waitFor(2);
-      pollPage.popupError.click();
+
 
 
 
