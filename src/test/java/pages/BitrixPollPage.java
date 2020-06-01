@@ -7,7 +7,10 @@ import utilities.BrowserUtils;
 import utilities.Driver;
 
 public class BitrixPollPage extends BitrixBasePage{
-    public  BitrixPollPage(){
+
+
+    public BitrixPollPage(){
+
         PageFactory.initElements(Driver.get(),this);
     }
 
@@ -30,6 +33,42 @@ public class BitrixPollPage extends BitrixBasePage{
     public  WebElement selectContact;
     @FindBy (xpath = "(//span[@class='feed-add-post-destination-text'])[2]")
     public  WebElement text2;
+
+
+    @FindBy(xpath = "(//span[@title='Upload files'])[1]")
+    public WebElement uploadFileButton;
+
+    @FindBy(id = "feed-add-post-destination-input-box")
+    public WebElement toPeopleBox;
+
+    @FindBy(xpath = "(//span[@title='Link'])[1]")
+    public WebElement linkIcon;
+
+    @FindBy(xpath = "(//span[@title='Insert video'])")
+    public WebElement videoIcon;
+
+    @FindBy(xpath = "(//span[@title='Quote text'])")
+    public WebElement insertQuotebutton;
+
+    @FindBy(xpath = "//input[@type='file']")
+    public WebElement getUploadFileButton;
+
+    @FindBy(id = "blog-submit-button-save")
+    public WebElement sendButton;
+
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-href")
+    public WebElement linkTextBox;
+
+    @FindBy(css = "input[value*=\"Save\"]")
+    public WebElement linkTextBoxSaveButton;
+
+    @FindBy(id = "video_idPostFormLHE_blogPostForm-source")
+    public WebElement videoUrlBox;
+
+    @FindBy(xpath = "//blockquote[@class='bxhtmled-quote']")
+    public WebElement addQuoteTextBox;
+
+
     @FindBy(id ="lhe_button_editor_blogPostForm" )
     public WebElement visualEditor;
     @FindBy(id = "bx-html-editor-tlbr-idPostFormLHE_blogPostForm")
@@ -48,4 +87,7 @@ public class BitrixPollPage extends BitrixBasePage{
 
 
 
+
 }
+
+
