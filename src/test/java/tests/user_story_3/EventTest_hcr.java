@@ -37,6 +37,8 @@ public class EventTest_hcr extends TestBase {
         String actualOption = bitrixEventPage.EventReminderType().getFirstSelectedOption().getText();
         extentLogger.info("Verify that count and reminder are send");
         Assert.assertEquals(actualOption, expectedOption);
+        extentLogger.pass("PASS: Topic text box Test");
+
 
     }
 
@@ -56,6 +58,7 @@ public class EventTest_hcr extends TestBase {
         bitrixEventPage.eventLocation.click();
         extentLogger.info("Verify that all locations are displayed");
         Assert.assertTrue(bitrixEventPage.eventLocation.isDisplayed());
+        extentLogger.pass("PASS: Topic text box Test");
 
     }
 
@@ -82,6 +85,7 @@ public class EventTest_hcr extends TestBase {
         bitrixEventPage.inputEmail.click();
         extentLogger.info("Verify that the email is added");
         Assert.assertEquals( actualResult, bitrixEventPage.inputEmail.getText());
+        extentLogger.pass("PASS: Topic text box Test");
 
     }
 
@@ -102,5 +106,6 @@ public class EventTest_hcr extends TestBase {
         extentLogger.info("Verify that all event details are seen");
         Assert.assertTrue(bitrixEventPage.eventDetails.isDisplayed());
         extentLogger.pass("PASS: Topic text box Test");
+
     }
 }
