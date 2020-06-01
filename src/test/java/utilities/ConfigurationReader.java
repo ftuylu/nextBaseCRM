@@ -38,8 +38,7 @@ public class ConfigurationReader {
         return properties.getProperty(keyName);
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a66a06d5920343d394df34f911342f56bb9b0a0d
+
+
 }

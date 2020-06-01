@@ -13,10 +13,10 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
 public class Driver {
-<<<<<<< HEAD
-=======
 
->>>>>>> a66a06d5920343d394df34f911342f56bb9b0a0d
+
+
+
     private Driver() {}
 
     private static WebDriver driver;
@@ -76,10 +76,10 @@ public class Driver {
             driver = null;
         }
     }
-<<<<<<< HEAD
-}
-=======
-
 
 }
->>>>>>> a66a06d5920343d394df34f911342f56bb9b0a0d
+
+
+
+
+

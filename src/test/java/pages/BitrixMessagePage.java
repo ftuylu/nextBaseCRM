@@ -31,6 +31,9 @@ public class BitrixMessagePage extends BitrixBasePage {
           @FindBy(xpath = "//span[@title='Quote text']")
            public WebElement QuoteText;
 
+          @FindBy(xpath = "//blockquote")
+          public WebElement QuoteBox;
+
           @FindBy(id = "bx-b-mention-blogPostForm")
            public WebElement Addmention;
 
@@ -43,8 +46,15 @@ public class BitrixMessagePage extends BitrixBasePage {
           @FindBy(xpath = "(//span[@title='Visual editor'])[1]")
           public WebElement VisualEditor;
 
+          @FindBy(id = "bx-html-editor-tlbr-idPostFormLHE_blogPostForm")
+          public WebElement editorTextBar;
+
+
           @FindBy(xpath = "//span[@title='Topic']")
           public WebElement Topic;
+
+          @FindBy(id = "POST_TITLE")
+          public WebElement TopicText;
 
 
 
