@@ -24,16 +24,14 @@ public class TestBase {
     protected static ExtentHtmlReporter htmlReporter;
     protected static ExtentTest extentLogger;
     protected String url;
-
-
     @BeforeTest
-    public void setUpTest() {
+    public void setUpTest(){
         //initialize the class
         report = new ExtentReports();
 
         //create a report path
         String projectPath = System.getProperty("user.dir");
-        String path = projectPath + "/test-output/report.html";
+        String path = projectPath +"/test-output/report.html";
 
         //initialize the html reporter with the report path
         htmlReporter = new ExtentHtmlReporter(path);
@@ -45,31 +43,29 @@ public class TestBase {
         htmlReporter.config().setReportName("Vytrack Smoke Test");
 
         //set environment information
-        report.setSystemInfo("Environment", "QA");
+        report.setSystemInfo("Environment","QA");
         report.setSystemInfo("Browser", ConfigurationReader.get("browser"));
-        report.setSystemInfo("OS", System.getProperty("os.name"));
+        report.setSystemInfo("OS",System.getProperty("os.name"));
 
     }
 
     @BeforeMethod
     @Parameters("env")
-    public void setUpMethod(@Optional String env) {
+    public void setUpMethod(@Optional String env){
         System.out.println("env = " + env);
 
         //if env variable is null use default url
-        if (env == null) {
-            url = ConfigurationReader.get("url");
-
-            //if it is not null, choose env based on value
-        } else {
-            url = ConfigurationReader.get(env + "_url");
+        if(env==null){
+            url=ConfigurationReader.get("url");
+        }else{
+            url=ConfigurationReader.get(env+"_url");
         }
-
+        //if it is not null, choose env based on value
         driver = Driver.get();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         actions = new Actions(driver);
-        wait = new WebDriverWait(driver, 10);
+        wait = new WebDriverWait(driver,10);
 
         driver.get(url);
 
@@ -79,7 +75,7 @@ public class TestBase {
     @AfterMethod
     public void afterMethod(ITestResult result) throws InterruptedException, IOException {
         //if test failed
-        if (result.getStatus() == ITestResult.FAILURE) {
+        if (result.getStatus()==ITestResult.FAILURE){
             //record the name fo failed test case
             extentLogger.fail(result.getName());
 
@@ -94,11 +90,15 @@ public class TestBase {
         }
         //close driver
         Thread.sleep(2000);
+
         Driver.closeDriver();
+
+       // Driver.closeDriver();
+
     }
 
     @AfterTest
-    public void tearDownTest() {
+    public void tearDownTest(){
         //this is when the report is actually created
         report.flush();
 
