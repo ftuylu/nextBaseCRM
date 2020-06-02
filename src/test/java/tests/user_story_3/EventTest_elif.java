@@ -1,4 +1,4 @@
-package tests.user_story3;
+package tests.user_story_3;
 import org.apache.poi.ss.formula.functions.T;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptException;
@@ -154,6 +154,7 @@ public class EventTest_elif extends TestBase {
         BitrixEventPage bitrixEventPage=new BitrixEventPage();
         bitrixEventPage.visualEditor.click();
         BrowserUtils.waitFor(2);
+
 
         Assert.assertTrue(bitrixEventPage.textBar.isDisplayed());
 
