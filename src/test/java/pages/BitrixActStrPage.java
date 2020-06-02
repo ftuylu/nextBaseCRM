@@ -9,9 +9,11 @@ import utilities.Driver;
 
 public class BitrixActStrPage extends BitrixBasePage {
 
-    public BitrixActStrPage() {
+
+    public BitrixActStrPage( ) {
         PageFactory.initElements(Driver.get(), this);
     }
+
 
     public void navigateActiveStream(String module, String tab) {
 
@@ -21,6 +23,8 @@ public class BitrixActStrPage extends BitrixBasePage {
 
         String tabLocator = "(//span[.='" + tab + "'])[1]";
         Driver.get().findElement(By.xpath(tabLocator)).click();
+
+
 
 
     }

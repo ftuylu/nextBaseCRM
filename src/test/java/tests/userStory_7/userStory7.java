@@ -23,13 +23,10 @@ public class userStory7 extends TestBase {
         morePage.navigateInMore("Announcement");
 
 
-//          morePage.uploadFiles.click();
-//          morePage.getUploadFilesAndImages.click();
+            BrowserUtils.waitFor(3);
+            morePage.uploadFiles.click();
+            BrowserUtils.waitFor(3);
 
-
-        BrowserUtils.waitFor(3);
-        morePage.uploadFiles.click();
-        BrowserUtils.waitFor(3);
 
         String projectPath = System.getProperty("user.dir");
         String relativePath = "src/test/resources/Whale.jpg";
@@ -67,10 +64,23 @@ public class userStory7 extends TestBase {
 
 
         morePage.selectDocumentFromBitrix.click();
-
         BrowserUtils.clickWithJS(morePage.myDrive);
         BrowserUtils.clickWithJS(morePage.selectDocumentButton);
+        
         morePage.sendButton.click();
+
+
+            //attach link
+            BrowserUtils.waitFor(3);
+            morePage.navigateInMore("Announcement");
+            morePage.link.click();
+
+
+
+        }
+
+     
+
 
     }
 

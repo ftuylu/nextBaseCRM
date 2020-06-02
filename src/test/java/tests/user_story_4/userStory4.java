@@ -55,11 +55,20 @@ public class userStory4 extends TestBase {
       pollPage.videoRecorderBtn.click();
       BrowserUtils.waitForClickablility(pollPage.popupAllowBtn,3);
       pollPage.popupAllowBtn.click();
-      BrowserUtils.waitFor(2);
-      pollPage.popupError.click();
 
+   }
+   @Test
+   public  void  getAddQuestion(){
+      BitrixPollPage pollPage=new BitrixPollPage();
+      pollPage.loginPollPage();
+      pollPage.addQuestionBtn.click();
+      BrowserUtils.waitFor(3);
+      pollPage.multiplechoiceBtn.click();
+      Assert.assertTrue(pollPage.multiplechoiceBtn.isSelected());
 
 
    }
+
+
 
 }
