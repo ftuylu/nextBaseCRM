@@ -1,13 +1,10 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.testng.annotations.Test;
-import utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.util.List;
+import utilities.Driver;
 
 public class TaskPageForUserStory2 extends BitrixBasePage {
 
@@ -45,6 +42,24 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(xpath = "(//span[@class='bxhtmled-metion']") //metin kutusundaki yazi
     public WebElement userMailInTheTexBox;
 
+    @FindBy(css = "#bx-b-uploadfile-task-form-lifefeed_task_form")
+    public WebElement fileUploadIcon;
+
+    @FindBy(xpath = "//input[@name='bxu_files[]']")
+    public WebElement uploadFilesAndImages;
+
+    @FindBy(xpath = "(//span[text()='Select document from Bitrix24'])[5]")
+    public WebElement selectDocumentFromBitrix;
+
+    @FindBy(xpath = "(//a[@class='bx-file-dialog-content-link bx-file-dialog-icon bx-file-dialog-icon-file'])[1]")
+    public WebElement selectFile;
+
+    @FindBy(xpath = "//span[text()='Select document']")
+    public WebElement clickSelectDocument;
+
+
+
+
 
     @FindBy(xpath = "(//span[@title='Link'])[2]") // link icon
     public WebElement linkIcon;
@@ -62,10 +77,10 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     public WebElement linkcancel;
 
     public void attachLink(String text, String urlText) {
-       linkIcon.click();
-       linkUrlText.sendKeys(text);
-       linkUrlText.sendKeys(urlText);
-       linkSave.click();
+        linkIcon.click();
+        linkUrlText.sendKeys(text);
+        linkUrlText.sendKeys(urlText);
+        linkSave.click();
     }
 
     @FindBy(xpath = "//span[.='Checklist']")
@@ -96,6 +111,7 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
         String nameLocator = "//div[.='" + name + "']/div";
         Driver.get().findElement(By.xpath(nameLocator)).click();
     }
+
     public void assignmentCategory(String category) {
         String categoryLocator = "//span[contains(text(),'" + category + "')])[1]"; // location --> "Created by" , "Participants", "Observers"
         Driver.get().findElement(By.cssSelector(categoryLocator)).click();
@@ -119,7 +135,7 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(xpath = " //.bx-calendar-right-arrow") // Calender Left Arrow
     public WebElement CalenderLeftArrow;
 
-    @FindBy(xpath ="//span[.='Time planning']")
+    @FindBy(xpath = "//span[.='Time planning']")
     public WebElement timePlanning;
 
     @FindBy(css = "a[data-action='time_ampm_up']") //AM or PM arrow up
@@ -140,7 +156,7 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
     @FindBy(css = ".task-additional-alt-more")  //More to specify the task details
     public WebElement More;
 
-    public void datePicker(String day, String month, String year, String hour,String minute) {
+    public void datePicker(String day, String month, String year, String hour, String minute) {
 
         String dayLocator = "//a[.='" + day + "']";
         Driver.get().findElement(By.xpath(dayLocator)).click();
@@ -158,7 +174,8 @@ public class TaskPageForUserStory2 extends BitrixBasePage {
         Driver.get().findElement(By.xpath("//span[.='Select']")).click();
 
     }
-    public void setDuration(String unitOfTime,String amountOfTime) {
+
+    public void setDuration(String unitOfTime, String amountOfTime) {
         if (unitOfTime == "day") {
             Driver.get().findElement(By.xpath("//span[.='days']")).click();
             duration.sendKeys(amountOfTime);

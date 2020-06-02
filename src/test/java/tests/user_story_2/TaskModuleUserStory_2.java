@@ -64,9 +64,41 @@ public class TaskModuleUserStory_2 extends TestBase {
         String actual = body.getText().trim();
 
         extentLogger.info("verifying is the same user mail");
-        Assert.assertEquals(actual,expected,"verifying is the same user mail");
+        Assert.assertEquals(actual, expected, "verifying is the same user mail");
 
         extentLogger.pass("PASS: task module test");
+
+    }
+
+    @Test
+    public void fileUpload() {
+
+        new BitrixLoginPage().loginHr();
+        TaskPageForUserStory2 taskPage = new TaskPageForUserStory2();
+        BrowserUtils.clickWithJS(taskPage.taskButton);
+        BrowserUtils.clickWithJS(taskPage.fileUploadIcon);
+        String projectPath = System.getProperty("user.dir");
+        String relativePath = "src/test/resources/Whale.jpg";
+        String filePath = projectPath + "/" + relativePath;
+        taskPage.uploadFilesAndImages.sendKeys(filePath);
+
+
+    }
+
+    @Test
+    public void selectDocumentFromBitrix(){
+
+        new BitrixLoginPage().loginHr();
+        TaskPageForUserStory2 taskPage = new TaskPageForUserStory2();
+        BrowserUtils.clickWithJS(taskPage.taskButton);
+        BrowserUtils.clickWithJS(taskPage.fileUploadIcon);
+        BrowserUtils.waitFor(2);
+        BrowserUtils.clickWithJS(taskPage.selectDocumentFromBitrix);
+        BrowserUtils.waitFor(2);
+        BrowserUtils.clickWithJS(taskPage.selectFile);
+        BrowserUtils.clickWithJS(taskPage.clickSelectDocument);
+
+
 
     }
 
