@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.BitrixActStrPage;
 import pages.BitrixLoginPage;
-import pages.TaskPageForUserStory2;
+import pages.*;
 import tests.TestBase;
 import utilities.BrowserUtils;
 import utilities.Driver;
