@@ -43,6 +43,16 @@ public class MorePage extends BitrixBasePage {
     @FindBy(css = ".feed-add-post-del-but")
     public WebElement deleteAllEmployee;
 
+    @FindBy(xpath = "//*[@id='bx-b-link-blogPostForm']/span")
+    public WebElement link;
+
+    @FindBy(id = "linkidPostFormLHE_blogPostForm-text")
+    public WebElement linkText;
+
+
+
+
+
 
 
 

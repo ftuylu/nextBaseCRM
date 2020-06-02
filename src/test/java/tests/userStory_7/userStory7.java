@@ -22,11 +22,6 @@ public class userStory7 extends TestBase {
             MorePage morePage = new MorePage();
             morePage.navigateInMore("Announcement");
 
-
-//          morePage.uploadFiles.click();
-//          morePage.getUploadFilesAndImages.click();
-
-
             BrowserUtils.waitFor(3);
             morePage.uploadFiles.click();
             BrowserUtils.waitFor(3);
@@ -71,6 +66,18 @@ public class userStory7 extends TestBase {
             BrowserUtils.clickWithJS(morePage.myDrive);
             BrowserUtils.clickWithJS(morePage.selectDocumentButton);
             morePage.sendButton.click();
+
+            //attach link
+            BrowserUtils.waitFor(3);
+            morePage.navigateInMore("Announcement");
+            morePage.link.click();
+
+            morePage.linkText.sendKeys();
+
+        }
+
+        @Test
+        public void attachLink(){
 
         }
 
