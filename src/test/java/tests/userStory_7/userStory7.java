@@ -3,9 +3,6 @@ package tests.userStory_7;
 import org.testng.annotations.Test;
 import pages.BitrixLoginPage;
 import pages.MorePage;
-
-import tests.TestBase;
-
 import pages.TaskPageForUserStory2;
 import tests.TestBase;
 import utilities.BrowserUtils;
@@ -84,4 +81,4 @@ public class userStory7 extends TestBase {
 
     }
 
-}
+
