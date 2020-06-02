@@ -16,57 +16,65 @@ public class userStory7 extends TestBase {
     @Test
 
     public void uploadFiles() {
-            BitrixLoginPage loginPage = new BitrixLoginPage();
-            loginPage.loginMarketing();
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginMarketing();
 
-            MorePage morePage = new MorePage();
-            morePage.navigateInMore("Announcement");
+        MorePage morePage = new MorePage();
+        morePage.navigateInMore("Announcement");
 
+<<<<<<< HEAD
             BrowserUtils.waitFor(3);
             morePage.uploadFiles.click();
             BrowserUtils.waitFor(3);
+=======
 
-            String projectPath = System.getProperty("user.dir");
-            String relativePath = "src/test/resources/Whale.jpg";
-            String filePath = projectPath + "/"+relativePath;
-
-            morePage.getUploadFilesAndImages.sendKeys(filePath);
-            // BrowserUtils.clickWithTimeOut(morePage.sendButton, 5);
-            BrowserUtils.waitFor(3);
-            morePage.sendButton.click();
-
-        }
-
-        @Test
-        public void selectDocumentFromBitrix(){
-            BitrixLoginPage loginPage = new BitrixLoginPage();
-            loginPage.loginMarketing();
-
-            MorePage morePage = new MorePage();
-            morePage.navigateInMore("Announcement");
-
-            //Delete AllEmployees option
-            morePage.deleteAllEmployee.click();
-
-            //Add more recepients
-            morePage.addRecipent.click();
-            TaskPageForUserStory2 employeeAndDepartment = new TaskPageForUserStory2();
-
-            employeeAndDepartment.employeeAndDepartments.click();
-            employeeAndDepartment.userMail.click();
+//          morePage.uploadFiles.click();
+//          morePage.getUploadFilesAndImages.click();
 
 
-            BrowserUtils.waitFor(3);
-            morePage.uploadFiles.click();
-            BrowserUtils.waitFor(3);
+        BrowserUtils.waitFor(3);
+        morePage.uploadFiles.click();
+        BrowserUtils.waitFor(3);
+>>>>>>> 35e1f8c79dda46ab8ffafc5bae7d5c47ff5e965d
+
+        String projectPath = System.getProperty("user.dir");
+        String relativePath = "src/test/resources/Whale.jpg";
+        String filePath = projectPath + "/"+relativePath;
+
+        morePage.getUploadFilesAndImages.sendKeys(filePath);
+        // BrowserUtils.clickWithTimeOut(morePage.sendButton, 5);
+        BrowserUtils.waitFor(3);
+        morePage.sendButton.click();
+
+    }
+
+    @Test
+    public void selectDocumentFromBitrix(){
+        BitrixLoginPage loginPage = new BitrixLoginPage();
+        loginPage.loginMarketing();
+
+        MorePage morePage = new MorePage();
+        morePage.navigateInMore("Announcement");
+
+        //Delete AllEmployees option
+        morePage.deleteAllEmployee.click();
+
+        //Add more recepients
+        morePage.addRecipent.click();
+        TaskPageForUserStory2 employeeAndDepartment = new TaskPageForUserStory2();
+
+        employeeAndDepartment.employeeAndDepartments.click();
+        employeeAndDepartment.userMail.click();
 
 
-            morePage.selectDocumentFromBitrix.click();
+        BrowserUtils.waitFor(3);
+        morePage.uploadFiles.click();
+        BrowserUtils.waitFor(3);
 
-            BrowserUtils.clickWithJS(morePage.myDrive);
-            BrowserUtils.clickWithJS(morePage.selectDocumentButton);
-            morePage.sendButton.click();
 
+        morePage.selectDocumentFromBitrix.click();
+
+<<<<<<< HEAD
             //attach link
             BrowserUtils.waitFor(3);
             morePage.navigateInMore("Announcement");
@@ -80,6 +88,12 @@ public class userStory7 extends TestBase {
         public void attachLink(){
 
         }
+=======
+        BrowserUtils.clickWithJS(morePage.myDrive);
+        BrowserUtils.clickWithJS(morePage.selectDocumentButton);
+        morePage.sendButton.click();
+>>>>>>> 35e1f8c79dda46ab8ffafc5bae7d5c47ff5e965d
 
     }
 
+}

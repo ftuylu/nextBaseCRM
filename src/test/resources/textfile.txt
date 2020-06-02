@@ -1,0 +1,15 @@
+        textfile text
+
+        // TO MAKE RELATIVE PATH FOR FILE
+        String projectPath = System.getProperty("user.dir"); // THIS PART PROVIDE US COMPUTER SPECIFIC PATH
+
+        // this part comes from copy path
+        String relativePath = "src/test/resources/textile.txt"; // THIS PART SHOW PROJECT TO FILE DESTINATION
+        String filePath = projectPath+"/"+relativePath; // HERE WE COMBINE TWO PATH EACH OTHER
+
+
+        // clicking with javascript executor
+         // create javascript executor object
+         JavascriptExecutor jse = (JavascriptExecutor)driver;
+         // using Executescript eleemnt to click stg
+         jse.executeScript("arguments[0].click()", dropdownlink);
