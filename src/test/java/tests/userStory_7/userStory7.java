@@ -22,20 +22,11 @@ public class userStory7 extends TestBase {
         MorePage morePage = new MorePage();
         morePage.navigateInMore("Announcement");
 
-<<<<<<< HEAD
+
             BrowserUtils.waitFor(3);
             morePage.uploadFiles.click();
             BrowserUtils.waitFor(3);
-=======
 
-//          morePage.uploadFiles.click();
-//          morePage.getUploadFilesAndImages.click();
-
-
-        BrowserUtils.waitFor(3);
-        morePage.uploadFiles.click();
-        BrowserUtils.waitFor(3);
->>>>>>> 35e1f8c79dda46ab8ffafc5bae7d5c47ff5e965d
 
         String projectPath = System.getProperty("user.dir");
         String relativePath = "src/test/resources/Whale.jpg";
@@ -73,26 +64,23 @@ public class userStory7 extends TestBase {
 
 
         morePage.selectDocumentFromBitrix.click();
+        BrowserUtils.clickWithJS(morePage.myDrive);
+        BrowserUtils.clickWithJS(morePage.selectDocumentButton);
+        
+        morePage.sendButton.click();
 
-<<<<<<< HEAD
+
             //attach link
             BrowserUtils.waitFor(3);
             morePage.navigateInMore("Announcement");
             morePage.link.click();
 
-            morePage.linkText.sendKeys();
+
 
         }
 
-        @Test
-        public void attachLink(){
+     
 
-        }
-=======
-        BrowserUtils.clickWithJS(morePage.myDrive);
-        BrowserUtils.clickWithJS(morePage.selectDocumentButton);
-        morePage.sendButton.click();
->>>>>>> 35e1f8c79dda46ab8ffafc5bae7d5c47ff5e965d
 
     }
 
